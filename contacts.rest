@@ -1,0 +1,13 @@
+### Local - Get all contacts
+GET http://localhost:3000/retrieve
+
+###Local - Get a single contact by Id
+GET http://localhost:3000/retrieve/?id=69fa678da186baf58b132c84
+
+
+
+### Production - Get all contacts
+GET https://contacts-lc6w.onrender.com/retrieve
+
+### Production - Get a single contact by Id
+GET https://contacts-lc6w.onrender.com/retrieve/?id=69fa678da186baf58b132c84
