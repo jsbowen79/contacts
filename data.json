@@ -1,0 +1,32 @@
+{
+    "contacts": 
+    [
+
+        {
+            "lastName": "Bowen", 
+            "email": "test@test.net",
+            "favoriteColor": "Blue", 
+            "birthday" : "01/01/2001"
+        }, 
+        
+        {
+            "lastName": "Johnson", 
+            "email": "test@test.com",
+            "favoriteColor": "Red", 
+            "birthday" : "01/01/2010"
+        }, 
+        {
+            "lastName": "Hansel", 
+            "email": "test@test.gov",
+            "favoriteColor": "Green", 
+            "birthday" : "02/16/1991"
+        }, 
+        
+        {
+            "lastName": "Carter", 
+            "email": "test@test.org",
+            "favoriteColor": "brown", 
+            "birthday" : "08/26/2000"
+        }
+    ]
+}
