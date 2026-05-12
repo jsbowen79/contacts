@@ -7,8 +7,8 @@ const swaggerDocument = require('./swagger-output.json');
 const cors = require('cors'); 
 
 //middleware
+app.use(cors({origin:"*"})); 
 app.use(express.json()); 
-app.use(cors()); 
 //routes
 app.use("/contacts", route); 
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument)); 
