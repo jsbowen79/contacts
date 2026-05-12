@@ -1,0 +1,161 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Contacts API",
+    "description": "This API provides users with the ability to perform CRUD operations with contact information",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/contacts/": {
+      "get": {
+        "description": "Provides a list of all Contacts in the Database",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Error Fetching Data"
+          }
+        }
+      },
+      "post": {
+        "description": "Add a new contact to the database.",
+        "parameters": [
+          {
+            "name": "contact",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "John"
+                },
+                "lastName": {
+                  "example": "Doe"
+                },
+                "email": {
+                  "example": "johndoe@test.net"
+                },
+                "favoriteColor": {
+                  "example": "pink"
+                },
+                "birthday": {
+                  "example": "01/01/2001"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Data not saved.  There was an uploading error.  Try again"
+          }, 
+          "": {
+            "description": "You must provide all information for the contact.  Please include firstName, lastName, email, favoriteColor, and birthday"
+          }
+        }
+      },
+      "put": {
+        "description": "Update a contact with new information",
+        "parameters": [
+          {
+            "name": "contact",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                },
+                "firstName": {
+                  "example": "John"
+                },
+                "lastName": {
+                  "example": "Doe"
+                },
+                "email": {
+                  "example": "johndoe@test.net"
+                },
+                "favoriteColor": {
+                  "example": "pink"
+                },
+                "birthday": {
+                  "example": "01/01/2001"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Record not found.  Try another ID"
+          },
+          "500": {
+            "description": "Database error.  Record not updated.  Please try again. "
+          }
+        }
+      }
+    },
+    "/contacts/{id}": {
+      "get": {
+        "description": "Retrieve the information for a single contact by Id number",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Error fetching Data"
+          }
+        }
+      },
+      "delete": {
+        "description": "Remove a record from the database by Id number",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Record not found.  Try another ID"
+          },
+          "500": {
+            "description": "Database error.  Record not deleted.  Please try again."
+          }
+        }
+      }
+    }
+  }
+}

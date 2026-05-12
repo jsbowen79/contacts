@@ -1,13 +1,16 @@
 const express = require("express"); 
 const app = express(); 
-const retrieveRoute = require("./routes/retrieve.js");
+const route = require("./routes/index.js");
 const port = process.env.PORT || 3000; 
+const swaggerUI = require('swagger-ui-express'); 
+const swaggerDocument = require('./swagger-output.json'); 
 
-console.log("in server.js"); 
-
+//middleware
+app.use(express.json()); 
 
 //routes
-app.use("/", retrieveRoute); 
+app.use("/contacts", route); 
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument)); 
 
 //start server
 app.listen(port, () => {
