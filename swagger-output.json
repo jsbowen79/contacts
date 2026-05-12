@@ -15,11 +15,6 @@
       "get": {
         "description": "Provides a list of all Contacts in the Database",
         "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "type": "string"
-          }
         ],
         "responses": {
           "200": {
