@@ -5,7 +5,7 @@
     "description": "This API provides users with the ability to perform CRUD operations with contact information",
     "version": "1.0.0"
   },
-  "host": "Global: https://contacts-lc6w.onrender.com/ Local: localhost:3000",
+  "host": "https://contacts-lc6w.onrender.com/ Local: localhost:3000",
   "basePath": "/",
   "schemes": [
     "http"
