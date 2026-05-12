@@ -8,7 +8,7 @@
   "host": "https://contacts-lc6w.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/contacts/": {
