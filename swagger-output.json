@@ -5,10 +5,10 @@
     "description": "This API provides users with the ability to perform CRUD operations with contact information",
     "version": "1.0.0"
   },
-  "host": "contacts-lc6w.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/contacts/": {

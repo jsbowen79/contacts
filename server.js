@@ -5,6 +5,7 @@ const port = process.env.PORT || 3000;
 const swaggerUI = require('swagger-ui-express'); 
 const swaggerDocument = require('./swagger-output.json'); 
 const cors = require('cors'); 
+const errorHandler = require('./errors/errorHandler.js');
 
 //middleware
 app.use(cors({origin:"*"})); 
@@ -12,6 +13,9 @@ app.use(express.json());
 //routes
 app.use("/contacts", route); 
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument)); 
+
+app.use(errorHandler); 
+
 
 //start server
 app.listen(port, () => {
